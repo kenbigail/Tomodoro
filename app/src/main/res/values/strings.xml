@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Tomodoro</string>
+    <string name="logo_splash_screen_desciprtion">Logo Tomodoro Splash Screen</string>
 </resources>
