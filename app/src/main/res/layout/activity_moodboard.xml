@@ -10,7 +10,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,7 +18,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:layout_marginTop="100dp"
         android:background="#FF8329"
         app:cardCornerRadius="50dp"
@@ -33,15 +33,50 @@
             android:background="#FF8329">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="200dp"
+                android:id="@+id/btn_Start"
+                android:layout_width="300dp"
                 android:layout_height="71dp"
-                android:layout_marginTop="60dp"
-                android:text="Button"
+                android:fontFamily="@font/plusjakartasans_extrabold"
+                android:text="@string/getstarted"
+                android:textColor="#FF8329"
+                android:textSize="16sp"
+                app:cornerRadius="22dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="357dp"
+                android:layout_height="86dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/moodboardtext"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="248dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/plusjakartasans"
+                android:text="@string/moodboardtext2"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/btn_Start"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
