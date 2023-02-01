@@ -7,12 +7,103 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_main"
+        android:layout_width="240dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="27dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="@string/main"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-5dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="@string/name"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="31dp"
+        android:fontFamily="@font/plusjakartasans"
+        android:text="@string/welcome"
+        android:textColor="#9C9C9C"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="39dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="211dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="29dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_welcome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_home" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="340dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="29dp"
+        android:textAlignment="center"
+        app:cardBackgroundColor="@color/main_color"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_quote"
+                android:layout_width="302dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/plusjakartasans_semibold"
+                android:text="@string/quote_example"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_quote2"
+                android:layout_width="302dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/plusjakartasans"
+                android:text="@string/writer_example"
+                android:textAlignment="center"
+                android:textColor="#CDFFFFFF"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_quote"
+                app:layout_constraintStart_toStartOf="@+id/tv_quote"
+                app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

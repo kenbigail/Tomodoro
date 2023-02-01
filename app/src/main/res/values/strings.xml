@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Tomodoro</string>
     <string name="logo_splash_screen_desciprtion">Logo Tomodoro Splash Screen</string>
+    <string name="welcome">Welcome Back,</string>
+    <string name="name">Syabab</string>
+    <string name="main">New Exciting Tasks Waits You</string>
+    <string name="quote_example">All big things come from small beginnings.</string>
+    <string name="writer_example">James Clear</string>
 </resources>
