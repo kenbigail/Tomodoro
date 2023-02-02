@@ -17,16 +17,17 @@ class SplashScreenActivity : AppCompatActivity() {
         mUserPreference = UserPreference(this)
         userModel = mUserPreference.getUser()
 
+
+
         Handler(Looper.getMainLooper()).postDelayed({
             //cek apakah user itu sudah pernah masuk aplikasi atau belum
-            if (userModel.isLogin) {
-                startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
+            if (!userModel.isLogin) {
                 //kalau user belum pernah login akan memainkan splash screen
-
-            } else {
-                //pindah ke Main Activity langsung ketika sudah login
                 startActivity(Intent(this@SplashScreenActivity, MoodboardActivity::class.java))
                 finish()
+            } else {
+                //pindah ke Main Activity langsung ketika sudah login
+                startActivity(Intent(this@SplashScreenActivity, MainActivity::class.java))
             }
         }, 3000)
     }
