@@ -7,6 +7,7 @@
     <string name="quote_example">All big things come from small beginnings.</string>
     <string name="writer_example">James Clear</string>
     <string name="getstarted">Get Started</string>
+    <string name="timer">Timers</string>
     <string name="moodboardtext">The App that solves all of your needs</string>
     <string name="moodboardtext2">this app is designed to help you manage your daily activities.</string>
 </resources>
