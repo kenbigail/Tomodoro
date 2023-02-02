@@ -3,11 +3,13 @@
     <string name="logo_splash_screen_desciprtion">Logo Tomodoro Splash Screen</string>
     <string name="welcome">Welcome Back,</string>
     <string name="name">Syabab</string>
-    <string name="main">New Exciting Tasks Waits You </string>
+    <string name="main_exciting">New Exciting Tasks Waits You</string>
     <string name="quote_example">All big things come from small beginnings.</string>
     <string name="writer_example">James Clear</string>
     <string name="getstarted">Get Started</string>
     <string name="timer">Timers</string>
+    <string name="text">Productivity Article</string>
+    <string name="article1">What is Pomodoro Technique?</string>
     <string name="moodboardtext">The App that solves all of your needs</string>
     <string name="moodboardtext2">this app is designed to help you manage your daily activities.</string>
 </resources>
