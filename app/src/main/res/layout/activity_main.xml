@@ -106,7 +106,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tv_quote"
+                android:id="@+id/tvQuote"
                 android:layout_width="302dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="22dp"
@@ -123,7 +123,7 @@
                 tools:ignore="TextContrastCheck" />
 
             <TextView
-                android:id="@+id/tv_quote2"
+                android:id="@+id/tvQuoteWriter"
                 android:layout_width="302dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -132,9 +132,9 @@
                 android:textAlignment="center"
                 android:textColor="#CDFFFFFF"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_quote"
-                app:layout_constraintStart_toStartOf="@+id/tv_quote"
-                app:layout_constraintTop_toBottomOf="@+id/tv_quote" />
+                app:layout_constraintEnd_toEndOf="@+id/tvQuote"
+                app:layout_constraintStart_toStartOf="@+id/tvQuote"
+                app:layout_constraintTop_toBottomOf="@+id/tvQuote" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -177,48 +177,17 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <ScrollView
-        android:layout_width="337dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/tv_main3"
-        app:layout_constraintTop_toBottomOf="@+id/tv_main3"
-        tools:ignore="SpeakableTextPresentCheck">
-
-        <LinearLayout
-            android:layout_width="337dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="337dp"
-                android:layout_height="65dp"
-                app:cardBackgroundColor="@color/main_color"
-                app:cardCornerRadius="12dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/tv_quote3"
-                        android:layout_width="269dp"
-                        android:layout_height="23dp"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginBottom="7dp"
-                        android:fontFamily="@font/plusjakartasans_semibold"
-                        android:text="@string/article1"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFF"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="TextContrastCheck" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-    </ScrollView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_artikel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent "
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="600dp"
+        android:layout_marginRight="17dp"
+        android:paddingTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_main3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

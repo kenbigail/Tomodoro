@@ -14,7 +14,10 @@
         android:theme="@style/Theme.Tomodoro"
         tools:targetApi="31">
         <activity
-            android:name=".TimerActivity"
+            android:name=".DetailArtikel"
+            android:exported="false" />
+        <activity
+            android:name=".ItemArtikelActivity"
             android:exported="false" />
         <activity
             android:name=".MoodboardActivity"
