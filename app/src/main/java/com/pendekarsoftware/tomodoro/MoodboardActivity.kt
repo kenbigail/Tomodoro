@@ -3,7 +3,6 @@ package com.pendekarsoftware.tomodoro
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 import com.pendekarsoftware.tomodoro.databinding.ActivityMoodboardBinding
 
 class MoodboardActivity : AppCompatActivity() {
