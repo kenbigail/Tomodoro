@@ -1,4 +1,4 @@
-package com.pendekarsoftware.tomodoro
+package com.pendekarsoftware.tomodoro.UserPref
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

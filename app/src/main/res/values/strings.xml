@@ -12,4 +12,10 @@
     <string name="article1">What is Pomodoro Technique?</string>
     <string name="moodboardtext">The App that solves all of your needs</string>
     <string name="moodboardtext2">this app is designed to help you manage your daily activities.</string>
+    <string name="TitleTimer">Tomodoro Timer</string>
+    <string name="start">Start</string>
+    <string name="motivation">Keep Going!</string>
+    <string name="motivation2">You\'re doing great!</string>
+    <string name="motivationsource">-Your Spirit</string>
+    <string name="article_detail">Productivity Article</string>
 </resources>

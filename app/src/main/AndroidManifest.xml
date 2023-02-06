@@ -14,10 +14,10 @@
         android:theme="@style/Theme.Tomodoro"
         tools:targetApi="31">
         <activity
-            android:name=".DetailArtikel"
+            android:name=".article.DetailArtikel"
             android:exported="false" />
         <activity
-            android:name=".ItemArtikelActivity"
+            android:name=".article.ItemArtikelActivity"
             android:exported="false" />
         <activity
             android:name=".MoodboardActivity"
