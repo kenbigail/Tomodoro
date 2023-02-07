@@ -1,10 +1,11 @@
-package com.pendekarsoftware.tomodoro
+package com.pendekarsoftware.tomodoro.Timer
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
+import com.pendekarsoftware.tomodoro.R
 import com.pendekarsoftware.tomodoro.databinding.ActivityTimer45Binding
 
 class Timer45Activity : AppCompatActivity() {

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pendekarsoftware.tomodoro.Timer25Activity">
+    tools:context="com.pendekarsoftware.tomodoro.Timer.Timer25Activity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

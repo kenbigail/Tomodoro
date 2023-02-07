@@ -4,6 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.pendekarsoftware.tomodoro.Timer.Timer25Activity
+import com.pendekarsoftware.tomodoro.Timer.Timer45Activity
+import com.pendekarsoftware.tomodoro.Timer.Timer60Activity
 import com.pendekarsoftware.tomodoro.article.adapter.ArtikelAdapter
 import com.pendekarsoftware.tomodoro.article.data.ArtikelData
 import com.pendekarsoftware.tomodoro.article.model.ArtikelModel

@@ -1,25 +1,26 @@
-package com.pendekarsoftware.tomodoro
+package com.pendekarsoftware.tomodoro.Timer
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
-import com.pendekarsoftware.tomodoro.databinding.ActivityTimer60Binding
+import androidx.appcompat.app.AppCompatActivity
+import com.pendekarsoftware.tomodoro.R
+import com.pendekarsoftware.tomodoro.databinding.ActivityTimer25Binding
 
-class Timer60Activity : AppCompatActivity() {
+class Timer25Activity : AppCompatActivity() {
 
-    private var START_MILLI_SECONDS = 3600000L
+    private var START_MILLI_SECONDS = 1500000L
 
     private lateinit var countdowntimer: CountDownTimer
-    private lateinit var binding: ActivityTimer60Binding
+    private lateinit var binding: ActivityTimer25Binding
     private var isRunning: Boolean = false
-    private var timeInMilliSeconds = 3600000L
+    private var timeInMilliSeconds = 1500000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer25)
-        binding = ActivityTimer60Binding.inflate(layoutInflater)
+        binding = ActivityTimer25Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.ivStart.setOnClickListener {
@@ -55,7 +56,7 @@ class Timer60Activity : AppCompatActivity() {
 
             override fun onFinish() {
                 Toast.makeText(
-                    this@Timer60Activity,
+                    this@Timer25Activity,
                     "Congrats! you have Finished the Timer.",
                     Toast.LENGTH_LONG
                 ).show()
