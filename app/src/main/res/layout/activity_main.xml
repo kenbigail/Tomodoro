@@ -25,12 +25,13 @@
         android:layout_width="211dp"
         android:layout_height="30dp"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginBottom="-660dp"
         android:fontFamily="@font/plusjakartasans_bold"
         android:text="@string/text"
         android:textColor="#303030"
         android:textSize="21sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv_artikel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
@@ -186,7 +187,6 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="600dp"
         android:layout_marginRight="17dp"
-        android:paddingTop="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
