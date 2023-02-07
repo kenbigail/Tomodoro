@@ -9,12 +9,12 @@ import com.pendekarsoftware.tomodoro.databinding.ActivityTimer60Binding
 
 class Timer60Activity : AppCompatActivity() {
 
-    private var START_MILLI_SECONDS = 2700000L
+    private var START_MILLI_SECONDS = 3600000L
 
     private lateinit var countdowntimer: CountDownTimer
     private lateinit var binding: ActivityTimer60Binding
     private var isRunning: Boolean = false
-    private var timeInMilliSeconds = 2700000L
+    private var timeInMilliSeconds = 3600000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
