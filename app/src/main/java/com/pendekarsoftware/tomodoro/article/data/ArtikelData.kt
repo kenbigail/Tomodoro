@@ -27,12 +27,21 @@ object ArtikelData {
                 "7. Menyusun skala prioritas\n" +
                 "8.Mulai memanfaatkan teknologi Time Management\n" +
                 "9. Apresiasi kebiasaan baikmu",
-        "1.  Batasi Penggunaan Gadget\n" +
+        "Tips memenejemen waktu kamu agar lebih produktif:\n" +
+                "\n" +
+                "1.  Batasi Penggunaan Gadget\n" +
                 "2. Melakukan Aktivitas di Luar Rumah\n" +
                 "3. Perbanyak Bersosialisasi\n" +
                 "4. Ganti Gadget dengan Buku\n" +
                 "5. Belajar Menyeimbangkan Waktu",
-        "Manfaat Teknik Pomodoro"
+        "Mengatur Waktu adalah hal yang penting untuk dilakukan untuk membantu kita agar lebih produktif dalam belajar ataupun bekerja dan salah satu cara mengatur waktu adalah menggunakan Teknik Pomodoro dan berikut adalah manfaat dari Teknik Pomodoro :\n" +
+                "\n" +
+                "1.  Merasa Lebih Produktif\n" +
+                "2. Lebih Fokus Saat Belajar & Bekerja\n" +
+                "3. Perencanaan Lebih Efektif\n" +
+                "4. Melatih Kedisiplinan\n" +
+                "5. Mencegah Terjadinya Prokrastinasi\n" +
+                "   (Menunda-nunda pekerjaan)"
     )
 
     val listData: ArrayList<ArtikelModel>

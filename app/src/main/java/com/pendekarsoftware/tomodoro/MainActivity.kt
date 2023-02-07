@@ -11,6 +11,7 @@ import com.pendekarsoftware.tomodoro.article.adapter.ArtikelAdapter
 import com.pendekarsoftware.tomodoro.article.data.ArtikelData
 import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
+import com.pendekarsoftware.tomodoro.TimerActivity
 import java.text.SimpleDateFormat
 import java.time.DayOfWeek
 import java.util.*
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         // setContentView(R.layout.activity_main)
 
         initRecyclerViewArticle()
+        initNavMenu()
     }
 
     private fun initRecyclerViewArticle() {
@@ -46,5 +48,19 @@ class MainActivity : AppCompatActivity() {
         binding.rvArtikel.layoutManager = LinearLayoutManager(this)
         // Pasang Adapter Ke RecyclerView
         binding.rvArtikel.adapter = inspirationAdapter
+    }
+    private fun initNavMenu() {
+        // Memberikan Aksi Klik Pada Icon
+        binding.timer25.setOnClickListener {
+            // Memulai Aktivitas Baru
+            // Memberikan Intent Untuk Menunjukan Tujuan Pergi
+            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+        }
+        binding.timer45.setOnClickListener {
+            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+        }
+        binding.timer60.setOnClickListener {
+            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+        }
     }
     }
