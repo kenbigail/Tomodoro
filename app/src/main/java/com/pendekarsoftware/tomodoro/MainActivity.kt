@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerViewArticle()
         initNavMenu()
+        initQuote()
     }
 
     private fun initRecyclerViewArticle() {
@@ -63,4 +64,29 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, TimerActivity::class.java))
         }
     }
+    private fun initQuote() {
+        // Mengambil Waktu Sekarang.
+        val timeNow = Calendar.getInstance()
+
+        // Menentukan Format Jam "HH" (Hour 2 Digit).
+        val timeFormat = SimpleDateFormat("HH")
+
+        // Membentuk Waktu Sekarang Hanya Jam Saja.
+        val time = timeFormat.format(timeNow.time)
+
+        // Menentukan Gambar Berdasarkan Jam Sekarang (Data Dari Variable Time)
+        when {
+            // Jam 00-06 Gambar Malam
+            time.toInt() in 1..6 -> {
+                // Ganti Gambar Jadi Malam
+                binding.tvQuote.setText(R.string.quote1)
+                binding.tvQuoteWriter.setText(R.string.writer1)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 7..12 -> {
+                binding.tvQuote.setText(R.string.quote2)
+                binding.tvQuoteWriter.setText(R.string.writer2)
+            }
+            }
+        }
     }

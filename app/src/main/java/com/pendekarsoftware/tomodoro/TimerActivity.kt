@@ -5,6 +5,7 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 import com.pendekarsoftware.tomodoro.databinding.ActivityTimerBinding
 
 class TimerActivity : AppCompatActivity() {
@@ -19,7 +20,8 @@ class TimerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer)
-
+        binding = ActivityTimerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.button.setOnClickListener {
             if (isRunning) {
