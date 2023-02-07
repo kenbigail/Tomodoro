@@ -2,79 +2,82 @@ package com.pendekarsoftware.tomodoro
 
 import android.os.Bundle
 import android.os.CountDownTimer
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.pendekarsoftware.tomodoro.databinding.ActivityTimerBinding
-import java.util.*
-
 
 class TimerActivity : AppCompatActivity() {
-    private var mTextViewCountDown: TextView? = null
-    private var mButtonStartPause: Button? = null
-    private var mButtonReset: Button? = null
-    private var mCountDownTimer: CountDownTimer? = null
-    private var mTimerRunning = false
-    private var mTimeLeftInMillis = START_TIME_IN_MILLIS
+
+    private var START_MILLI_SECONDS = 1500000L
+
+    private lateinit var countdowntimer: CountDownTimer
     private lateinit var binding: ActivityTimerBinding
+    private var isRunning: Boolean = false
+    private var timeInMilliSeconds = 1500000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        mTextViewCountDown = findViewById(R.id.text_view_countdown)
-        binding.buttonStartPause.setOnClickListener {
-            if (mTimerRunning) {
+        setContentView(R.layout.activity_timer)
+
+
+        binding.button.setOnClickListener {
+            if (isRunning) {
                 pauseTimer()
             } else {
-                startTimer()
+                startTimer(timeInMilliSeconds)
             }
         }
-        binding.buttonReset.setOnClickListener { resetTimer() }
-        updateCountDownText()
-    }
 
-    private fun startTimer() {
-        mCountDownTimer = object : CountDownTimer(mTimeLeftInMillis, 1000) {
-            override fun onTick(millisUntilFinished: Long) {
-                mTimeLeftInMillis = millisUntilFinished
-                updateCountDownText()
-            }
+        binding.buttonReset.setOnClickListener {
+            resetTimer()
+        }
 
-            override fun onFinish() {
-                mTimerRunning = false
-                mButtonStartPause!!.text
-                mButtonStartPause!!.visibility = View.INVISIBLE
-                mButtonReset!!.visibility = View.VISIBLE
-            }
-        }.start()
-        mTimerRunning = true
-        mButtonStartPause!!.text = "Pause"
-        mButtonReset!!.visibility = View.INVISIBLE
+
     }
 
     private fun pauseTimer() {
-        mCountDownTimer!!.cancel()
-        mTimerRunning = false
-        mButtonStartPause!!.text = "Start"
-        mButtonReset!!.visibility = View.VISIBLE
+
+        binding.button.text = "Start"
+        countdowntimer.cancel()
+        isRunning = false
+        binding.buttonReset.visibility = View.VISIBLE
+    }
+
+    private fun startTimer(time_in_seconds: Long) {
+        countdowntimer = object : CountDownTimer(time_in_seconds, 1000) {
+
+            override fun onTick(p0: Long) {
+                timeInMilliSeconds = p0
+                updateTextUI()
+            }
+
+            override fun onFinish() {
+                Toast.makeText(
+                    this@TimerActivity,
+                    "Congrats! you have Finished the Timer.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+        countdowntimer.start()
+
+        isRunning = true
+        binding.button.text = "Pause"
+        binding.buttonReset.visibility = View.INVISIBLE
+
     }
 
     private fun resetTimer() {
-        mTimeLeftInMillis = START_TIME_IN_MILLIS
-        updateCountDownText()
-        mButtonReset!!.visibility = View.INVISIBLE
-        mButtonStartPause!!.visibility = View.VISIBLE
+        timeInMilliSeconds = START_MILLI_SECONDS
+        updateTextUI()
+        binding.buttonReset.visibility = View.INVISIBLE
     }
 
-    private fun updateCountDownText() {
-        val minutes = (mTimeLeftInMillis / 1000).toInt() / 60
-        val seconds = (mTimeLeftInMillis / 1000).toInt() % 60
-        val timeLeftFormatted = String.format(Locale.getDefault(), "%02d:%02d", minutes, seconds)
-        mTextViewCountDown!!.text = timeLeftFormatted
-    }
+    private fun updateTextUI() {
+        val minute = (timeInMilliSeconds / 1000) / 60
+        val seconds = (timeInMilliSeconds / 1000) % 60
 
-    companion object {
-        private const val START_TIME_IN_MILLIS: Long = 1500000
+        binding.textViewCountdown.text = "$minute:$seconds"
     }
 }

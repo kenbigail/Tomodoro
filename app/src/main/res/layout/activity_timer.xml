@@ -21,7 +21,7 @@
         app:titleTextColor="@color/white" />
 
     <Button
-        android:id="@+id/button_start_pause"
+        android:id="@+id/button"
         android:layout_width="93dp"
         android:layout_height="61dp"
         android:layout_marginStart="70dp"
