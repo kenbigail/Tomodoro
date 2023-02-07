@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pendekarsoftware.tomodoro.TimerActivity">
+    tools:context=".Timer45Activity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -20,33 +21,10 @@
         app:titleTextAppearance="@style/ToolbarAppearance"
         app:titleTextColor="@color/white" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="93dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="80dp"
-        android:text="Start"
-        app:backgroundTint="@color/main_color"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
-    <Button
-        android:id="@+id/button_reset"
-        android:layout_width="93dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="70dp"
-        android:text="Reset"
-        app:backgroundTint="@color/main_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        android:layout_marginTop="55dp"
         android:layout_marginBottom="80dp"
         app:cardBackgroundColor="@color/main_color"
         app:cardCornerRadius="20dp"
@@ -115,5 +93,58 @@
         app:layout_constraintEnd_toEndOf="@+id/motivation2"
         app:layout_constraintStart_toStartOf="@id/motivation2"
         app:layout_constraintTop_toBottomOf="@id/motivation2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/pomodoro_technique"
+        app:fontFamily="@font/plusjakartasans_semibold"
+        android:textColor="@color/main_color"
+        app:layout_constraintEnd_toEndOf="@+id/cardView3"
+        app:layout_constraintStart_toStartOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/min45"
+        android:textColor="@color/black"
+        app:fontFamily="@font/plusjakartasans_bold"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <ImageView
+        android:id="@+id/ivReset"
+        android:layout_width="110dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/ivReset" />
+
+    <ImageView
+        android:id="@+id/ivStart"
+        android:layout_width="110dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@+id/cardView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/ivStart" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="136dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="@+id/ivReset"
+        app:layout_constraintStart_toStartOf="@+id/ivStart"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/Vector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

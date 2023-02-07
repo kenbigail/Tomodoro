@@ -16,6 +16,9 @@
     <string name="motivation2">You\'re doing great!</string>
     <string name="motivationsource">-Your Spirit</string>
     <string name="article_detail">Productivity Article</string>
+    <string name="min25">25 Minutes</string>
+    <string name="min45">45 Minutes</string>
+    <string name="min60">1 Hour</string>
 
     //Quotes and Writer
     <string name="quote1">All big things come from small beginnings.</string>
@@ -38,4 +41,5 @@
 
     <string name="quote7">It is not the mountain we conquer, but ourselves.</string>
     <string name="writer7">Sir Edmund Hillary</string>
+    <string name="pomodoro_technique">Pomodoro Technique</string>
 </resources>

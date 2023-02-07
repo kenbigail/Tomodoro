@@ -5,25 +5,24 @@ import android.os.CountDownTimer
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
-import com.pendekarsoftware.tomodoro.databinding.ActivityTimerBinding
+import com.pendekarsoftware.tomodoro.databinding.ActivityTimer25Binding
 
-class TimerActivity : AppCompatActivity() {
+class Timer25Activity : AppCompatActivity() {
 
     private var START_MILLI_SECONDS = 1500000L
 
     private lateinit var countdowntimer: CountDownTimer
-    private lateinit var binding: ActivityTimerBinding
+    private lateinit var binding: ActivityTimer25Binding
     private var isRunning: Boolean = false
     private var timeInMilliSeconds = 1500000L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_timer)
-        binding = ActivityTimerBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_timer25)
+        binding = ActivityTimer25Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button.setOnClickListener {
+        binding.ivStart.setOnClickListener {
             if (isRunning) {
                 pauseTimer()
             } else {
@@ -31,7 +30,7 @@ class TimerActivity : AppCompatActivity() {
             }
         }
 
-        binding.buttonReset.setOnClickListener {
+        binding.ivReset.setOnClickListener {
             resetTimer()
         }
 
@@ -40,10 +39,10 @@ class TimerActivity : AppCompatActivity() {
 
     private fun pauseTimer() {
 
-        binding.button.text = "Start"
+        binding.ivStart.setImageResource(R.drawable.ivPause)
         countdowntimer.cancel()
         isRunning = false
-        binding.buttonReset.visibility = View.VISIBLE
+        binding.ivReset.visibility = View.VISIBLE
     }
 
     private fun startTimer(time_in_seconds: Long) {
@@ -56,7 +55,7 @@ class TimerActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 Toast.makeText(
-                    this@TimerActivity,
+                    this@Timer25Activity,
                     "Congrats! you have Finished the Timer.",
                     Toast.LENGTH_LONG
                 ).show()
@@ -65,15 +64,15 @@ class TimerActivity : AppCompatActivity() {
         countdowntimer.start()
 
         isRunning = true
-        binding.button.text = "Pause"
-        binding.buttonReset.visibility = View.INVISIBLE
+        binding.ivStart.setImageResource(R.drawable.ivPause)
+        binding.ivReset.visibility = View.INVISIBLE
 
     }
 
     private fun resetTimer() {
         timeInMilliSeconds = START_MILLI_SECONDS
         updateTextUI()
-        binding.buttonReset.visibility = View.INVISIBLE
+        binding.ivReset.visibility = View.INVISIBLE
     }
 
     private fun updateTextUI() {

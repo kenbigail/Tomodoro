@@ -1,20 +1,13 @@
 package com.pendekarsoftware.tomodoro
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.pendekarsoftware.tomodoro.UserPref.UserModel
-import com.pendekarsoftware.tomodoro.UserPref.UserPreference
 import com.pendekarsoftware.tomodoro.article.adapter.ArtikelAdapter
 import com.pendekarsoftware.tomodoro.article.data.ArtikelData
 import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
-import com.pendekarsoftware.tomodoro.TimerActivity
-import java.text.SimpleDateFormat
-import java.time.DayOfWeek
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -55,13 +48,13 @@ class MainActivity : AppCompatActivity() {
         binding.timer25.setOnClickListener {
             // Memulai Aktivitas Baru
             // Memberikan Intent Untuk Menunjukan Tujuan Pergi
-            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+            startActivity(Intent(this@MainActivity, Timer25Activity::class.java))
         }
         binding.timer45.setOnClickListener {
-            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+            startActivity(Intent(this@MainActivity, Timer45Activity::class.java))
         }
         binding.timer60.setOnClickListener {
-            startActivity(Intent(this@MainActivity, TimerActivity::class.java))
+            startActivity(Intent(this@MainActivity, Timer60Activity::class.java))
         }
     }
     private fun initQuote() {
