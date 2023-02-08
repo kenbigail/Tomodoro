@@ -11,6 +11,8 @@ import com.pendekarsoftware.tomodoro.article.adapter.ArtikelAdapter
 import com.pendekarsoftware.tomodoro.article.data.ArtikelData
 import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
+import java.text.SimpleDateFormat
+import java.util.*
 import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {

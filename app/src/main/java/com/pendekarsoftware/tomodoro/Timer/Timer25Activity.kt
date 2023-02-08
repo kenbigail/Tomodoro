@@ -2,6 +2,7 @@ package com.pendekarsoftware.tomodoro.Timer
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,7 @@ class Timer25Activity : AppCompatActivity() {
         setContentView(R.layout.activity_timer25)
         binding = ActivityTimer25Binding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         binding.ivStart.setOnClickListener {
             if (isRunning) {
@@ -40,7 +42,7 @@ class Timer25Activity : AppCompatActivity() {
 
     private fun pauseTimer() {
 
-        binding.ivStart.setImageResource(R.drawable.ivPause)
+        binding.ivStart.setImageResource(R.drawable.iv_start)
         countdowntimer.cancel()
         isRunning = false
         binding.ivReset.visibility = View.VISIBLE
@@ -65,15 +67,13 @@ class Timer25Activity : AppCompatActivity() {
         countdowntimer.start()
 
         isRunning = true
-        binding.ivStart.setImageResource(R.drawable.ivPause)
-        binding.ivReset.visibility = View.INVISIBLE
+        binding.ivStart.setImageResource(R.drawable.iv_pause)
 
     }
 
     private fun resetTimer() {
         timeInMilliSeconds = START_MILLI_SECONDS
         updateTextUI()
-        binding.ivReset.visibility = View.INVISIBLE
     }
 
     private fun updateTextUI() {
@@ -81,5 +81,13 @@ class Timer25Activity : AppCompatActivity() {
         val seconds = (timeInMilliSeconds / 1000) % 60
 
         binding.textViewCountdown.text = "$minute:$seconds"
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

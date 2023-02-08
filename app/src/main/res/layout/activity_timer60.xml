@@ -110,11 +110,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/min60"
         android:textColor="@color/black"
+        android:textSize="26sp"
         app:fontFamily="@font/plusjakartasans_bold"
-        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -123,19 +123,19 @@
         android:id="@+id/ivReset"
         android:layout_width="110dp"
         android:layout_height="80dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="@+id/cardView3"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/ivReset" />
+        app:srcCompat="@drawable/iv_reset" />
 
     <ImageView
         android:id="@+id/ivStart"
         android:layout_width="110dp"
         android:layout_height="80dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="@+id/cardView3"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/ivStart" />
+        app:srcCompat="@drawable/iv_start" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -145,6 +145,6 @@
         app:layout_constraintEnd_toEndOf="@+id/ivReset"
         app:layout_constraintStart_toStartOf="@+id/ivStart"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/Vector" />
+        app:srcCompat="@drawable/vector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
