@@ -75,15 +75,40 @@ class MainActivity : AppCompatActivity() {
         // Menentukan Gambar Berdasarkan Jam Sekarang (Data Dari Variable Time)
         when {
             // Jam 00-06 Gambar Malam
-            time.toInt() in 1..6 -> {
+            time.toInt() in 0..4 -> {
                 // Ganti Gambar Jadi Malam
                 binding.tvQuote.setText(R.string.quote1)
                 binding.tvQuoteWriter.setText(R.string.writer1)
             }
             // Jam 07-12 Gambar Pagi
-            time.toInt() in 7..12 -> {
+            time.toInt() in 4..6 -> {
                 binding.tvQuote.setText(R.string.quote2)
                 binding.tvQuoteWriter.setText(R.string.writer2)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 6..9 -> {
+                binding.tvQuote.setText(R.string.quote3)
+                binding.tvQuoteWriter.setText(R.string.writer3)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 9..12 -> {
+                binding.tvQuote.setText(R.string.quote4)
+                binding.tvQuoteWriter.setText(R.string.writer4)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 12..16 -> {
+                binding.tvQuote.setText(R.string.quote5)
+                binding.tvQuoteWriter.setText(R.string.writer5)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 16..18 -> {
+                binding.tvQuote.setText(R.string.quote6)
+                binding.tvQuoteWriter.setText(R.string.writer6)
+            }
+            // Jam 07-12 Gambar Pagi
+            time.toInt() in 18..23 -> {
+                binding.tvQuote.setText(R.string.quote7)
+                binding.tvQuoteWriter.setText(R.string.writer7)
             }
             }
         }
