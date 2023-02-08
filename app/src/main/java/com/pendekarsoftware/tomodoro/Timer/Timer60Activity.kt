@@ -68,6 +68,7 @@ class Timer60Activity : AppCompatActivity() {
 
         isRunning = true
         binding.ivStart.setImageResource(R.drawable.iv_pause)
+        binding.ivReset.visibility = View.INVISIBLE
 
     }
 
