@@ -24,8 +24,11 @@
         <entry key="..\:/Users/Ammar Z S/AndroidStudioProjects/Tomodoro/app/src/main/res/layout/item_artikel.xml" value="0.3546195652173913" />
         <entry key="..\:/Users/Ammar Z S/AndroidStudioProjects/Tomodoro/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.239" />
         <entry key="..\:/Users/Ammar Z S/AndroidStudioProjects/Tomodoro/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.239" />
+        <entry key="app/src/main/res/drawable/bg_rounded_edit_text.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.2085" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.17844202898550723" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.2289156626506024" />
       </map>
     </option>
   </component>

@@ -72,40 +72,40 @@ class MainActivity : AppCompatActivity() {
         // Membentuk Waktu Sekarang Hanya Jam Saja.
         val time = timeFormat.format(timeNow.time)
 
-        // Menentukan Gambar Berdasarkan Jam Sekarang (Data Dari Variable Time)
+        // Menentukan Quotes berdasarkan Jam (Data Dari Variable Time)
         when {
-            // Jam 00-06 Gambar Malam
+            // Jam 00-04 Quotes Pertama
             time.toInt() in 0..4 -> {
                 // Ganti Gambar Jadi Malam
                 binding.tvQuote.setText(R.string.quote1)
                 binding.tvQuoteWriter.setText(R.string.writer1)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam 04-06 Quotes Kedua
             time.toInt() in 4..6 -> {
                 binding.tvQuote.setText(R.string.quote2)
                 binding.tvQuoteWriter.setText(R.string.writer2)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam 06-09 Quotes Ketiga
             time.toInt() in 6..9 -> {
                 binding.tvQuote.setText(R.string.quote3)
                 binding.tvQuoteWriter.setText(R.string.writer3)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam 09-12 Quotes Keempat
             time.toInt() in 9..12 -> {
                 binding.tvQuote.setText(R.string.quote4)
                 binding.tvQuoteWriter.setText(R.string.writer4)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam Jam 12-16 Quotes Kelima
             time.toInt() in 12..16 -> {
                 binding.tvQuote.setText(R.string.quote5)
                 binding.tvQuoteWriter.setText(R.string.writer5)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam 16-18 Quotes Keenam
             time.toInt() in 16..18 -> {
                 binding.tvQuote.setText(R.string.quote6)
                 binding.tvQuoteWriter.setText(R.string.writer6)
             }
-            // Jam 07-12 Gambar Pagi
+            // Jam 18-23 Quotes Ketujuh
             time.toInt() in 18..23 -> {
                 binding.tvQuote.setText(R.string.quote7)
                 binding.tvQuoteWriter.setText(R.string.writer7)
