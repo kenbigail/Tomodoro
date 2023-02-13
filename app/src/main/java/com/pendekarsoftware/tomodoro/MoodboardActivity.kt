@@ -19,7 +19,7 @@ class MoodboardActivity : AppCompatActivity() {
             val userPreference = UserPreference(this)
             val userModel = UserModel()
 
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, UserActivity::class.java))
             finish()
 
             // catat user udah login

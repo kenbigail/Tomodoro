@@ -20,6 +20,9 @@
     <string name="min45">45 Minutes</string>
     <string name="min60">1 Hour</string>
     <string name="UserDesc">Image for Username</string>
+    <string name="welcome_champ">Welcome Champ!</string>
+    <string name="call_you">What should we call you?</string>
+    <string name="on_click">Your one click away to get started!</string>
 
     //Quotes and Writer
     <string name="quote1">All big things come from small beginnings.</string>

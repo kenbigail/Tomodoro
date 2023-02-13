@@ -6,23 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".UserActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/NameView"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        app:cardBackgroundColor="@color/main_color"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/CardView_Name"
+        android:layout_width="330dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="65dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="17dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:strokeColor="@color/silver"
+        app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/Ic_Name"
+                android:id="@+id/ic_Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -32,21 +34,91 @@
                 app:srcCompat="@drawable/ic_baseline_people_24" />
 
             <EditText
-                android:id="@+id/NameEdit"
+                android:id="@+id/et_username"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="16dp"
-                android:background="@color/main_color"
+                android:background="@color/white"
                 android:ems="10"
-                android:hint="Username"
-                android:textColorHint="#FFFFFF"
-                android:textSize="12sp"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/silver"
+                android:textSize="13sp"
                 app:fontFamily="@font/plusjakartasans"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/Ic_Name"
+                app:layout_constraintStart_toEndOf="@+id/ic_Name"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="TextContrastCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="124dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/logo_home" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:gravity="center"
+        android:text="@string/welcome_champ"
+        android:textColor="@color/main_color"
+        android:textSize="32sp"
+        app:fontFamily="@font/plusjakartasans_extrabold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="@string/call_you"
+        android:textColor="@color/main_color"
+        android:textSize="18sp"
+        app:fontFamily="@font/plusjakartasans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="203dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="105dp"
+        android:gravity="center"
+        android:text="@string/on_click"
+        android:textColor="@color/main_color"
+        android:textSize="18sp"
+        app:fontFamily="@font/plusjakartasans_semibold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CardView_Name" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#FF8329"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:cornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="@+id/CardView_Name"
+        app:layout_constraintTop_toBottomOf="@+id/CardView_Name" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
