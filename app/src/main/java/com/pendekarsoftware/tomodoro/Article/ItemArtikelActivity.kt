@@ -1,4 +1,4 @@
-package com.pendekarsoftware.tomodoro.article
+package com.pendekarsoftware.tomodoro.Article
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

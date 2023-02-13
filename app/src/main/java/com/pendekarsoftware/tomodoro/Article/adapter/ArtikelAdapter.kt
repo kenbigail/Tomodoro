@@ -1,4 +1,4 @@
-package com.pendekarsoftware.tomodoro.article.adapter
+package com.pendekarsoftware.tomodoro.Article.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.pendekarsoftware.tomodoro.article.DetailArtikel
+import com.pendekarsoftware.tomodoro.Article.DetailArtikel
 import com.pendekarsoftware.tomodoro.R
-import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
+import com.pendekarsoftware.tomodoro.Article.model.ArtikelModel
 
 // 1.
 class ArtikelAdapter

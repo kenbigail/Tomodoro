@@ -1,7 +1,6 @@
-package com.pendekarsoftware.tomodoro.article.data
+package com.pendekarsoftware.tomodoro.Article.data
 
-import com.pendekarsoftware.tomodoro.R
-import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
+import com.pendekarsoftware.tomodoro.Article.model.ArtikelModel
 
 object ArtikelData {
     private val title = arrayOf(
