@@ -1,8 +1,10 @@
 package com.pendekarsoftware.tomodoro
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.pendekarsoftware.tomodoro.Timer.Timer25Activity
 import com.pendekarsoftware.tomodoro.Timer.Timer45Activity
@@ -13,11 +15,11 @@ import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
     // Deklarasi Variable Keneksi Komponen xml Ke File Kotlin
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 
     // Perintah Dalama OnCreate Akan Dijalankan Ketika Activity Pertama Dibuka
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +30,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         // setContentView(R.layout.activity_main)
 
+        initName()
         initRecyclerViewArticle()
         initNavMenu()
         initQuote()
+    }
+
+    private fun initName() {
+        val message = intent.getStringExtra("EXTRA_MESSAGE")
+        val textview = findViewById<TextView>(R.id.tv_name).apply {
+            text = message
+        }
     }
 
     private fun initRecyclerViewArticle() {
@@ -40,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         list.addAll(ArtikelData.listData)
 
         // Panggil adapter Dan Masukkan list Kedalamnya
-        val inspirationAdapter = ArtikelAdapter (list)
+        val inspirationAdapter = ArtikelAdapter(list)
 
         // Pengaturan RecyclerView
         binding.rvArtikel.setHasFixedSize(true)
@@ -48,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         // Pasang Adapter Ke RecyclerView
         binding.rvArtikel.adapter = inspirationAdapter
     }
+
     private fun initNavMenu() {
         // Memberikan Aksi Klik Pada Icon
         binding.timer25.setOnClickListener {
@@ -62,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, Timer60Activity::class.java))
         }
     }
+
     private fun initQuote() {
         // Mengambil Waktu Sekarang.
         val timeNow = Calendar.getInstance()
@@ -77,39 +89,39 @@ class MainActivity : AppCompatActivity() {
             // Jam 00-04 Quotes Pertama
             time.toInt() in 0..4 -> {
                 // Ganti Gambar Jadi Malam
-                binding.tvQuote.setText(R.string.quote1)
-                binding.tvQuoteWriter.setText(R.string.writer1)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote1)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer1)
             }
             // Jam 04-06 Quotes Kedua
             time.toInt() in 4..6 -> {
-                binding.tvQuote.setText(R.string.quote2)
-                binding.tvQuoteWriter.setText(R.string.writer2)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote2)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer2)
             }
             // Jam 06-09 Quotes Ketiga
             time.toInt() in 6..9 -> {
-                binding.tvQuote.setText(R.string.quote3)
-                binding.tvQuoteWriter.setText(R.string.writer3)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote3)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer5)
             }
             // Jam 09-12 Quotes Keempat
             time.toInt() in 9..12 -> {
-                binding.tvQuote.setText(R.string.quote4)
-                binding.tvQuoteWriter.setText(R.string.writer4)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote4)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer5)
             }
             // Jam Jam 12-16 Quotes Kelima
             time.toInt() in 12..16 -> {
-                binding.tvQuote.setText(R.string.quote5)
-                binding.tvQuoteWriter.setText(R.string.writer5)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote5)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer5)
             }
             // Jam 16-18 Quotes Keenam
             time.toInt() in 16..18 -> {
-                binding.tvQuote.setText(R.string.quote6)
-                binding.tvQuoteWriter.setText(R.string.writer6)
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote6)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer6)
             }
             // Jam 18-23 Quotes Ketujuh
             time.toInt() in 18..23 -> {
-                binding.tvQuote.setText(R.string.quote7)
-                binding.tvQuoteWriter.setText(R.string.writer7)
-            }
+                binding.tvQuote.setText(com.pendekarsoftware.tomodoro.R.string.quote7)
+                binding.tvQuoteWriter.setText(com.pendekarsoftware.tomodoro.R.string.writer7)
             }
         }
     }
+}
