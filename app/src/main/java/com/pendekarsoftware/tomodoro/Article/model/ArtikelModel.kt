@@ -1,4 +1,4 @@
-package com.pendekarsoftware.tomodoro.article.model
+package com.pendekarsoftware.tomodoro.Article.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

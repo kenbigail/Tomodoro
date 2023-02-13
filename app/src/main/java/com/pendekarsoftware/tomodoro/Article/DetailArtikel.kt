@@ -1,10 +1,10 @@
-package com.pendekarsoftware.tomodoro.article
+package com.pendekarsoftware.tomodoro.Article
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.pendekarsoftware.tomodoro.databinding.ActivityDetailArtikelBinding
-import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
+import com.pendekarsoftware.tomodoro.Article.model.ArtikelModel
 
 class DetailArtikel : AppCompatActivity() {
     private lateinit var binding: ActivityDetailArtikelBinding

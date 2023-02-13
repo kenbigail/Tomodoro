@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.pendekarsoftware.tomodoro.Timer.Timer25Activity
 import com.pendekarsoftware.tomodoro.Timer.Timer45Activity
 import com.pendekarsoftware.tomodoro.Timer.Timer60Activity
-import com.pendekarsoftware.tomodoro.article.adapter.ArtikelAdapter
-import com.pendekarsoftware.tomodoro.article.data.ArtikelData
-import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
+import com.pendekarsoftware.tomodoro.Article.adapter.ArtikelAdapter
+import com.pendekarsoftware.tomodoro.Article.data.ArtikelData
+import com.pendekarsoftware.tomodoro.Article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
