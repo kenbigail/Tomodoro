@@ -1,68 +1,67 @@
-package com.pendekarsoftware.tomodoro.Timer
+package com.pendekarsoftware.tomodoro.Timer.timer60
 
-import android.app.*
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.TaskStackBuilder
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.pendekarsoftware.tomodoro.R
-import com.pendekarsoftware.tomodoro.databinding.ActivityTimer25Binding
+import com.pendekarsoftware.tomodoro.databinding.ActivityTimer60Binding
 
-class Timer25Activity : AppCompatActivity() {
+class Timer60Activity : AppCompatActivity() {
 
-    private var START_MILLI_SECONDS = 1500000L
+    private var startMilliSeconds = 3600000L
 
     private lateinit var countdowntimer: CountDownTimer
-    private lateinit var binding: ActivityTimer25Binding
+    private lateinit var binding: ActivityTimer60Binding
     private var isRunning: Boolean = false
-    private var timeInMilliSeconds = 1500000L
+    private var timeInMilliSeconds = 3600000L
 
-    val CHANNEL_ID = "channelID"
-    val CHANNEL_NAME = "channelName"
-    val NOTIF_ID = 0
+    val channelID = "channelID"
+    private val channelName = "channelName"
+    val notifID = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timer25)
-        binding = ActivityTimer25Binding.inflate(layoutInflater)
+        binding = ActivityTimer60Binding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
 
         createNotifChannel()
 
         binding.ivStart.setOnClickListener {
-            //ketika Tombol Start di Klik maka akan Run Timer
             if (isRunning) {
-                //Deklarasi Function Pause Timer dan memunculkan Tombol Pause
                 pauseTimer()
             } else {
-                //Ketika Pause akan mendeklarasi Function startTimer
                 startTimer(timeInMilliSeconds)
             }
         }
 
         binding.ivReset.setOnClickListener {
-            //Ketika dipencet maka Timer akan Reset
             resetTimer()
         }
+
+
     }
 
     private fun createNotifChannel() {
-        //Membuat Function createNotifChannel untuk memunculkan Notifikasi ketika Timer Selesai
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
-            val channel = NotificationChannel(CHANNEL_ID,CHANNEL_NAME,NotificationManager.IMPORTANCE_DEFAULT).apply {
-                //menambahkan Color Blue pada Lights
+            val channel = NotificationChannel(channelID,channelName,
+                NotificationManager.IMPORTANCE_DEFAULT).apply {
                 lightColor= Color.BLUE
                 enableLights(true)
             }
-            // Val Notification Manager yang nantinya akan dipakai
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
         }
@@ -70,7 +69,6 @@ class Timer25Activity : AppCompatActivity() {
 
     private fun pauseTimer() {
 
-        //Function pauseTimer
         binding.ivStart.setImageResource(R.drawable.iv_start)
         countdowntimer.cancel()
         isRunning = false
@@ -87,20 +85,21 @@ class Timer25Activity : AppCompatActivity() {
 
             override fun onFinish() {
                 Toast.makeText(
-                    this@Timer25Activity,
-                    "Your timer is Finished. Good Job!", Toast.LENGTH_SHORT)
-                    .show()
+                    this@Timer60Activity,
+                    "Congrats! you have Finished the Timer.",
+                    Toast.LENGTH_LONG
+                ).show()
 
-                val intent = Intent(this@Timer25Activity, Timer25Activity::class.java)
-                val pendingIntent = TaskStackBuilder.create(this@Timer25Activity).run {
+                val intent = Intent(this@Timer60Activity, Timer60Activity::class.java)
+                val pendingIntent = TaskStackBuilder.create(this@Timer60Activity).run {
                     addNextIntentWithParentStack(intent)
-                    getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT)
+                    getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
                 }
 
 
-                val notifManager = NotificationManagerCompat.from(this@Timer25Activity)
+                val notifManager = NotificationManagerCompat.from(this@Timer60Activity)
 
-                val notif = NotificationCompat.Builder(this@Timer25Activity, CHANNEL_ID)
+                val notif = NotificationCompat.Builder(this@Timer60Activity, channelID)
                     .setContentTitle("Timer Finished")
                     .setContentText("Good Job! you have finished your Timer.")
                     .setSmallIcon(R.drawable.ic_timer_notification)
@@ -108,7 +107,7 @@ class Timer25Activity : AppCompatActivity() {
                     .setContentIntent(pendingIntent)
                     .build()
 
-                notifManager.notify(NOTIF_ID, notif)
+                notifManager.notify(notifID, notif)
             }
         }
         countdowntimer.start()
@@ -120,7 +119,7 @@ class Timer25Activity : AppCompatActivity() {
     }
 
     private fun resetTimer() {
-        timeInMilliSeconds = START_MILLI_SECONDS
+        timeInMilliSeconds = startMilliSeconds
         updateTextUI()
     }
 
@@ -130,7 +129,6 @@ class Timer25Activity : AppCompatActivity() {
 
         binding.textViewCountdown.text = "$minute:$seconds"
     }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
