@@ -14,6 +14,7 @@ internal class UserPreference(context: Context) {
     fun setUser(value: UserModel) {
         val editor = preferences.edit()
         editor.putBoolean(ISLOGIN, value.isLogin)
+        editor.putString(NAME, value.name)
         editor.apply()
     }
 

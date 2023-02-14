@@ -18,10 +18,10 @@
             android:name=".UserActivity"
             android:exported="false" />
         <activity
-            android:name=".Timer.Timer60Activity"
+            android:name=".Timer.timer60.Timer60Activity"
             android:exported="false" />
         <activity
-            android:name=".Timer.Timer45Activity"
+            android:name=".Timer.timer45.Timer45Activity"
             android:exported="false" />
         <activity
             android:name=".Article.DetailArtikel"
@@ -33,7 +33,7 @@
             android:name=".MoodboardActivity"
             android:exported="false" />
         <activity
-            android:name=".Timer.Timer25Activity"
+            android:name=".Timer.timer25.Timer25Activity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"

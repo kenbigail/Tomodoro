@@ -1,5 +1,6 @@
 package com.pendekarsoftware.tomodoro
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +11,8 @@ import com.pendekarsoftware.tomodoro.Article.model.ArtikelModel
 import com.pendekarsoftware.tomodoro.Timer.timer25.Timer25Activity
 import com.pendekarsoftware.tomodoro.Timer.timer45.Timer45Activity
 import com.pendekarsoftware.tomodoro.Timer.timer60.Timer60Activity
+import com.pendekarsoftware.tomodoro.UserPref.UserModel
+import com.pendekarsoftware.tomodoro.UserPref.UserPreference
 import com.pendekarsoftware.tomodoro.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -18,6 +21,8 @@ import kotlin.collections.ArrayList
 class MainActivity : AppCompatActivity() {
     // Deklarasi Variable Koneksi Komponen xml Ke File Kotlin
     private lateinit var binding: ActivityMainBinding
+    private lateinit var  mUserPreference: UserPreference
+    private lateinit var  userModel: UserModel
 
     // Perintah Dalama OnCreate Akan Dijalankan Ketika Activity Pertama Dibuka
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,9 +33,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         // setContentView(R.layout.activity_main)
 
+        initUsername()
         initRecyclerViewArticle()
         initNavMenu()
         initQuote()
+    }
+    private fun initUsername() {
+        // Mengambil Text Dari UserPreference
+        mUserPreference = UserPreference(this)
+        userModel = mUserPreference.getUser()
+
+        binding.tvName.text = userModel.name
     }
 
     private fun initRecyclerViewArticle() {

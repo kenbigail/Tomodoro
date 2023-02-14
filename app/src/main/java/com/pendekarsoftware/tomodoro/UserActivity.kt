@@ -1,22 +1,25 @@
 package com.pendekarsoftware.tomodoro
-
+import android.preference.PreferenceManager
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.pendekarsoftware.tomodoro.Timer.Timer25Activity
 import com.pendekarsoftware.tomodoro.UserPref.UserModel
 import com.pendekarsoftware.tomodoro.UserPref.UserPreference
-import com.pendekarsoftware.tomodoro.article.DetailArtikel
-import com.pendekarsoftware.tomodoro.article.model.ArtikelModel
-
+import com.pendekarsoftware.tomodoro.databinding.ActivityMoodboardBinding
+import com.pendekarsoftware.tomodoro.databinding.ActivityUserBinding
 
 class UserActivity : AppCompatActivity() {
+    lateinit var binding: ActivityUserBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user)
+        binding = ActivityUserBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var btn_submit = findViewById<Button>(R.id.btn_login)
         btn_submit.setOnClickListener {
@@ -37,6 +40,9 @@ class UserActivity : AppCompatActivity() {
         val intent = Intent(this@UserActivity, MainActivity::class.java).also {
             it.putExtra("EXTRA_MESSAGE", message)
             startActivity(it)
+
+            userModel.name = binding.etUsername.text.toString()
+            userPreference.setUser(userModel)
         }
     }
 }
