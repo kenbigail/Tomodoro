@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.pendekarsoftware.tomodoro.Timer.Timer25Activity">
+    tools:context="com.pendekarsoftware.tomodoro.Timer.timer25.Timer25Activity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -43,7 +43,7 @@
                 android:layout_marginBottom="28dp"
                 android:fontFamily="@font/plusjakartasans_bold"
                 android:gravity="center"
-                android:text="00:00"
+                android:text="@string/tImer25"
                 android:textColor="@color/white"
                 android:textSize="60sp"
                 app:layout_constraintBottom_toBottomOf="parent"
