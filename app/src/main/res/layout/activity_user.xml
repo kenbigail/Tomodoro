@@ -113,10 +113,10 @@
         android:id="@+id/btn_login"
         android:layout_width="330dp"
         android:layout_height="60dp"
-        android:backgroundTint="#FF8329"
-        android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
-        android:text="Button"
+        android:backgroundTint="#FF8329"
+        android:text="@string/get"
+        android:textColor="@android:color/white"
         app:cornerRadius="15dp"
         app:layout_constraintStart_toStartOf="@+id/CardView_Name"
         app:layout_constraintTop_toBottomOf="@+id/CardView_Name" />

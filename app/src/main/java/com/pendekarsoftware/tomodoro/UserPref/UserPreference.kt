@@ -22,7 +22,6 @@ internal class UserPreference(context: Context) {
         val model = UserModel()
         model.name = preferences.getString(NAME, "")
         model.isLogin = preferences.getBoolean(ISLOGIN, false)
-
         return model
     }
 }

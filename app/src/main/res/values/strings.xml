@@ -23,6 +23,7 @@
     <string name="welcome_champ">Welcome Champ!</string>
     <string name="call_you">What should we call you?</string>
     <string name="on_click">You\'re one click away to get started!</string>
+    <string name="get">Get Started!</string>
 
     //Quotes and Writer
     <string name="quote1">All big things come from small beginnings.</string>
