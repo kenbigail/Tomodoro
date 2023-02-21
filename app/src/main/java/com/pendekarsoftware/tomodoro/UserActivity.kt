@@ -1,8 +1,10 @@
 package com.pendekarsoftware.tomodoro
 import android.preference.PreferenceManager
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -20,6 +22,13 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (Build.VERSION.SDK_INT >= 21) {
+            val window = this.window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.statusBarColor = this.resources.getColor(R.color.main_color)
+        }
 
         var btn_submit = findViewById<Button>(R.id.btn_login)
         btn_submit.setOnClickListener {
